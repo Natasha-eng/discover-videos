@@ -2,6 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  images: {
+    remotePatterns: [
+      {
+        hostname: "images.unsplash.com",
+      },
+      {
+        hostname: "i.ytimg.com",
+      },
+      {
+        hostname: "yt3.ggpht.com",
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
