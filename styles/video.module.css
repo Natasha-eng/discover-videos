@@ -49,11 +49,25 @@
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   column-gap: 2em;
+  padding-bottom: 1.5rem;
 }
 
 .col1 {
   max-height: 50vh /* 208px */;
   overflow-y: auto;
+  word-break: break-all;
+}
+
+.col1::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 10px;
+}
+
+.col1::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  width: 10px;
 }
 
 .publishTime {

@@ -46,14 +46,7 @@ const Video = ({ video }) => {
   const [toggleLike, setToggleLike] = useState(false);
   const [toggleDislike, setToggleDislike] = useState(false);
 
-  const {
-    title,
-    publishTime,
-    description,
-    channelTitle,
-    viewCount: { viewCount = 0 },
-  } = video;
-
+  const { title, publishTime, description, channelTitle, viewCount } = video;
   useEffect(() => {
     const handleLikeDislikeService = async () => {
       const response = await fetch(`/api/stats?videoId=${videoId}`, {
