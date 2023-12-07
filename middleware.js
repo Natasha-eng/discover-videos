@@ -2,27 +2,27 @@ import { NextResponse } from "next/server";
 import { verifyToken } from "./lib/utils";
 
 export async function middleware(req, ev) {
-  const token = req ? req.cookies.get("token") : null;
+  // const token = req ? req.cookies.get("token") : null;
 
-  const userId = await verifyToken(token?.value);
-  const { pathname } = req.nextUrl;
+  // const userId = await verifyToken(token?.value);
+  // const { pathname } = req.nextUrl;
 
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.includes("/api/login") ||
-    userId ||
-    pathname.includes("/static")
-  ) {
-    return NextResponse.next();
-  }
+  // if (
+  //   pathname.startsWith("/_next") ||
+  //   pathname.includes("/api/login") ||
+  //   userId ||
+  //   pathname.includes("/static")
+  // ) {
+  //   return NextResponse.next();
+  // }
 
-  if ((!token || !userId) && pathname !== "/login") {
-    const url = req.nextUrl.clone();
-    url.pathname = "/login";
-    return NextResponse.redirect(url);
-  }
+  // if ((!token || !userId) && pathname !== "/login") {
+  //   const url = req.nextUrl.clone();
+  //   url.pathname = "/login";
+  //   return NextResponse.redirect(url);
+  // }
 }
 
-export const config = {
-  matcher: ["/api/login", "/"],
-};
+// export const config = {
+//   matcher: ["/api/login", "/",  "/login"],
+// };
