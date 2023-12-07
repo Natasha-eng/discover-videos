@@ -118,12 +118,30 @@ const Video = ({ video }) => {
         <iframe
           id="ytplayer"
           className={styles.videoPlayer}
-          type="text/html"
+          type="video/mp4"
           width="100%"
           height="360"
           src={`http://www.youtube.com/embed/${videoId}?autoplay=1&origin=http://example.com&controls=0&rel=0`}
           frameBorder="0"
-        />
+        >
+          <video
+            width="100%"
+            height="360"
+            loop
+            autoPlay
+            className={styles.videoPlayer}
+          >
+            <source
+              src={`http://www.youtube.com/embed/${videoId}?autoplay=1&origin=http://example.com&controls=0&rel=0`}
+              type="video/mp4"
+            />
+            <source
+              src={`http://www.youtube.com/embed/${videoId}?autoplay=1&origin=http://example.com&controls=0&rel=0`}
+              type="video/ogg"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </iframe>
 
         <div className={styles.likeDislikeBtnWrapper}>
           <button className={styles.likeBtnWrapper} onClick={handleToggleLike}>
