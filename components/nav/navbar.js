@@ -78,6 +78,7 @@ const NavBar = () => {
               alt="Netflix logo"
               width={128}
               height={34}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </Link>
@@ -99,6 +100,7 @@ const NavBar = () => {
                 alt="Expand dropdown"
                 width={24}
                 height={24}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </button>
             {showDropdown && (

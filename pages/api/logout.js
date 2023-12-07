@@ -6,10 +6,11 @@ export default async function logout(req, res) {
   try {
     if (!req.cookies.token)
       return res.status(401).json({ message: "User is not logged in" });
-    
+
     const token = req.cookies.token;
 
     const userId = await verifyToken(token);
+
     removeTokenCookie(res);
     try {
       await magicAdmin.users.logoutByIssuer(userId);

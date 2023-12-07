@@ -12,7 +12,7 @@ export default async function login(req, res) {
 
       // Retrieves user information by DID token
       const metadata = await magicAdmin.users.getMetadataByToken(DIDToken);
-     
+
       //create jwt
       const token = jwt.sign(
         {
@@ -36,7 +36,8 @@ export default async function login(req, res) {
       isNewUserQuery && (await createNewUser(token, metadata));
 
       //set the cookie
-      const cookie = setTokenCookie(token, res);
+      setTokenCookie(token, res);
+
       res.send({ done: true, msg: "user logged in" });
     } catch (err) {
       res.status(500).send({ done: false });

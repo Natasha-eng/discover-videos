@@ -44,6 +44,7 @@ const Card = (props) => {
           alt="image"
           onError={handleError}
           fill={true}
+          sizes="(max-width: 768px) 100%s, (max-width: 1200px) 100%"
         />
       </motion.div>
     </div>

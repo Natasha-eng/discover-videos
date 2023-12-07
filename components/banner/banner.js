@@ -27,6 +27,7 @@ const Banner = (props) => {
                 alt="Play icon"
                 width={32}
                 height={32}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <span className={styles.playText}>Play</span>
             </button>
