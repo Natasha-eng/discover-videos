@@ -22,3 +22,7 @@ export async function middleware(req, ev) {
     return NextResponse.redirect(url);
   }
 }
+
+export const config = {
+  matcher: ["/", "/login"],
+};
